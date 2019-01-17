@@ -1,3 +1,17 @@
+//                                      $$\                            $$$$$$\  
+//                                      $$ |                          $$  __$$\ 
+//         $$$$$$$\  $$$$$$\   $$$$$$$\ $$$$$$$\  $$\   $$\ $$\   $$\ $$ /  \__|
+//        $$  _____| \____$$\ $$  _____|$$  __$$\ $$ |  $$ |$$ |  $$ |$$$$$$$\  
+//        \$$$$$$\   $$$$$$$ |\$$$$$$\  $$ |  $$ |$$ |  $$ |$$ |  $$ |$$  __$$\ 
+//         \____$$\ $$  __$$ | \____$$\ $$ |  $$ |$$ |  $$ |$$ |  $$ |$$ /  $$ |
+//        $$$$$$$  |\$$$$$$$ |$$$$$$$  |$$ |  $$ |\$$$$$$  |\$$$$$$  | $$$$$$  |
+//        \_______/  \_______|\_______/ \__|  \__| \______/  \______/  \______/ 
+//
+// Author: Sashwat K
+// Created On: 17 Jan 2019
+// Revision: 1
+// Last Edited: 17 Jan 2019
+
 #include <SPI.h>  // adafruit display driver header file
 #include <Wire.h> // adafruit display driver header file
 #include <Adafruit_GFX.h> // adafruit display driver header file
