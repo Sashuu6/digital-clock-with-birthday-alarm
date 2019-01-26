@@ -42,18 +42,39 @@ void loop() {
   display.print(" ");
   display.println(rtc.getDOWStr());
   display.setCursor(0,10);
-  display.println(rtc.getDateStr());
-  display.setCursor(0,20);
-  display.println("Happy birthday Sashuu");
-  display.display();
+  display.print(rtc.getDateStr());
+  display.print(" ");
+  display.print(rtc.getTemp());
+  display.print(" C");
 
+    //Printing all the stuff on the serial monitor
+  // Shows the day
+  Serial.print("Day: ");
   Serial.print(rtc.getDOWStr());
   Serial.print(" ");
+  
   // Shows the date
+  Serial.print("Date: ");
   Serial.print(rtc.getDateStr());
-  Serial.print(" -- ");
+  Serial.print(" ");
+  
   // Shows the time
-  Serial.println(rtc.getTimeStr());
+  Serial.print("Time: ");
+  Serial.print(rtc.getTimeStr());
+  Serial.print(" ");
+  
+  //Show Temperature
+  Serial.print("Temperature: ");
+  Serial.print(rtc.getTemp());
+
+  
+  display.setCursor(0,20);
+  if(strcmp(rtc.getDateStr(), "25.01.2019") == 1) { // Set your birthday date here
+    display.print("Happy birthday");
+    Serial.print(" ");
+    Serial.println("Happy birthday");
+  }
+  display.display(); 
   
   delay (500);
 }
