@@ -1,5 +1,8 @@
 # digital clock with birthday alarm
-The digital clock with birthday alarm is a DYI alarm built using Arduino UNO, Adafruit OLED and DS 3231 RTC module.
+The digital clock with birthday alarm is a DYI alarm built using Arduino UNO, Adafruit OLED and DS 3231 RTC module. You can use this to remember your birthday or you can gift this project to your loved ones.
+
+![Project image](docs/main.jpg)
+
 
 # Instructions
 
