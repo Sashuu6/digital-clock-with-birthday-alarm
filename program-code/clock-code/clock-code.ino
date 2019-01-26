@@ -21,11 +21,11 @@
 #define OLED_RESET 4 //OLED
 Adafruit_SSD1306 display(OLED_RESET); //OLED
 
-DS3231  rtc(SDA, SCL); // Initializing RTC module
+DS3231  rtc(SDA, SCL); // Init the DS3231 using the hardware interface
 
 void setup() {
-  Serial.begin(115200); // Initialize Serial Monitor
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // OLED 
+  Serial.begin(9600); // Initialize Serial Monitor
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // OLED
   display.display(); //initialize display
   display.clearDisplay(); //clear display
   delay(1000);
@@ -38,9 +38,13 @@ void loop() {
   display.setTextSize(1); // setting text size
   display.setTextColor(WHITE); // setting text color
   display.setCursor(0,0); // setting position for OLED display
-  display.println("Simple Code");
+  display.print(rtc.getTimeStr());
+  display.print(" ");
+  display.println(rtc.getDOWStr());
   display.setCursor(0,10);
-  display.println("Simple Code");
+  display.println(rtc.getDateStr());
+  display.setCursor(0,20);
+  display.println("Happy birthday Sashuu");
   display.display();
 
   Serial.print(rtc.getDOWStr());
@@ -50,6 +54,6 @@ void loop() {
   Serial.print(" -- ");
   // Shows the time
   Serial.println(rtc.getTimeStr());
-  // Wait one second before repeating :)
-  delay (1000);
+  
+  delay (500);
 }

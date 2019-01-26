@@ -45,5 +45,5 @@ void loop()
   // Shows the time
   Serial.println(rtc.getTimeStr());
   
-  delay (1000);   // Wait one second before repeating
+  delay (500);   // Wait one second before repeating
 }
