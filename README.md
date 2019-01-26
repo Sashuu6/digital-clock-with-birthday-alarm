@@ -3,6 +3,21 @@ The digital clock with birthday alarm is a DYI alarm built using Arduino UNO, Ad
 
 ![Project image](docs/main.jpg)
 
+# Features
+
+1. Display Time
+2. Display Day
+3. Display Date
+4. Temperature
+5. Display "happy birthday" on the given birthday date
+
+# Requirements
+
+1. Arduino UNO (For programming)
+2. DS3231 RTC module
+3. Adafruit OLED display
+4. Jumper pins or wires
+5. Dotted PCB
 
 # Instructions
 
@@ -18,7 +33,7 @@ First we will setup the date and time to the RTC module.
 
 Note: Run the program only once. This code sets the date and time to the RTC module. 
 
-Now, we will install Adafruit OLED library and run the clock code
+Now, we will install Adafruit OLED library and run the clock code.
 
 1. Install Adafruit GFX library and Adafruit SSD1306 library from manage libraries.
 2. Edit the code present at program-code/clock-code/clock-code.ino to set the birthday date.
