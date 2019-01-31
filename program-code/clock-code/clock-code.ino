@@ -27,7 +27,7 @@ String current_day;
 String current_date;
 String current_time;
 String current_temperature;
-String your_birthday = "06.02";
+String your_birthday = "05.11";
 String temp_date = "00.00";
 int disp_screen = 0;
 int button_pin = 8;
@@ -99,7 +99,7 @@ void loop() {
       display.setTextSize(2); // setting text size
       display.setCursor(0,0); // setting position for OLED display
       display.println("Happy Bday");
-      display.println("Vijitha !!");
+      display.println("Myself !!");
       display.display();
     }
     else {
@@ -136,7 +136,7 @@ void loop() {
   //Show birthday or not
   if(count == 5) {
     Serial.print(" ");
-    Serial.println("Happy Bday Vijitha");
+    Serial.println("Happy Bday Myself");
   }
   display.display(); 
   
