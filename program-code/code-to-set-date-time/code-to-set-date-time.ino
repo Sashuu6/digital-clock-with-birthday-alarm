@@ -27,9 +27,9 @@ void setup()
 {
   Serial.begin(9600); // Setup Serial connection
   rtc.begin(); // Initialize the rtc object
-  rtc.setDOW(SATURDAY); // Set Day-of-Week to your current day
-  rtc.setTime(03, 00, 35); // Set the time to current time. If you set to 1:00:00, the time will be 1:00:00pm. It's the library's bug.
-  rtc.setDate(26, 1, 2019); // Set the date to your current date
+  rtc.setDOW(THURSDAY); // Set Day-of-Week to your current day
+  rtc.setTime(18, 16, 52); // Set the time to current time. Set the time in 24-hours
+  rtc.setDate(31, 1, 2019); // Set the date to your current date
 }
 
 void loop()
