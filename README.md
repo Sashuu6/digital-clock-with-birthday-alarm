@@ -9,6 +9,7 @@ The digital clock with birthday alarm is a DYI alarm built using Arduino UNO, Ad
 2. 1st screen for time and day
 3. 2nd screen for date and temperature
 4. 3rd screen for notification
+5. Each screen timer set for 3 seconds
 
 ![New feature](docs/new-ui.jpeg)
 
