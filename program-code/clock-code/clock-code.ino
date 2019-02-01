@@ -29,8 +29,8 @@ String current_time; // To store current time
 String current_temperature; // To store current temperature
 String your_birthday = "06.02"; // Set your birthday in format (DD/MM)
 String temp_date = "00.00"; // Temp variable
-int disp_screen=0;
-int counter = 0;
+int disp_screen=0; // To store the screen number
+int counter = 0; // A termperory counter
 
 void setup() {
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // OLED
@@ -44,12 +44,12 @@ void loop() {
   int count=0;
   rtc.begin(); // Initialize the rtc object
   
-  current_day = rtc.getDOWStr();
-  current_date = rtc.getDateStr();
-  current_time = rtc.getTimeStr();
-  current_temperature = rtc.getTemp();
+  current_day = rtc.getDOWStr(); // Gets current day
+  current_date = rtc.getDateStr(); // Gets current date
+  current_time = rtc.getTimeStr(); // Gets current time
+  current_temperature = rtc.getTemp(); // Gets current temperature
 
-  while(i<=4) {
+  while(i<=4) { // The following code check if it's birthday or not
     temp_date[i] = current_date[i];
     i++;
     if(temp_date[i] == your_birthday[i]){
@@ -57,17 +57,23 @@ void loop() {
     }
   }
 
+  // The following code will check the screen every 3 seconds
+
   if(counter == 3) {
     disp_screen++;
     counter = 0;
   }
 
+  // The following code will reset the disp_screen to 0 if the disp_screen goes above 2.
   if(disp_screen>2) {
     disp_screen = 0;
   }
   display.clearDisplay();
   display.display();
   display.setTextColor(WHITE); // setting text color
+  
+  // Display screen 1
+
   if(disp_screen == 0) {
     display.setTextSize(2); // setting text size
     display.setCursor(17,0); // setting position for OLED display
@@ -83,6 +89,9 @@ void loop() {
       display.println(">>0<<");
     }
   }
+
+  // Display screen 2
+
   else if(disp_screen == 1) {
     display.setTextSize(2); // setting text size
     display.setCursor(0,0); // setting position for OLED display
@@ -92,6 +101,8 @@ void loop() {
     display.print(current_temperature);
     display.print(" C");
   }
+  // Display screen 3
+
   else {
     if(count == 5) {
       display.setTextSize(2); // setting text size
@@ -130,7 +141,14 @@ void loop() {
 
   //Show Screen number
   Serial.print("Screen number: ");
-  Serial.println(disp_screen);
+  Serial.print(disp_screen);
+  Serial.print(" ");
+
+  //Show Counter
+  Serial.print("Counter: ");
+  Serial.print(counter);
+  Serial.print(" ");
+
   //Show birthday or not
   if(count == 5) {
     Serial.print(" ");
