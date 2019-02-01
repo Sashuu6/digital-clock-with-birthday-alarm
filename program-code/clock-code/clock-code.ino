@@ -23,18 +23,16 @@ Adafruit_SSD1306 display(OLED_RESET); //OLED
 
 DS3231  rtc(SDA, SCL); // Init the DS3231 using the hardware interface
 
-String current_day;
-String current_date;
-String current_time;
-String current_temperature;
-String your_birthday = "05.11";
-String temp_date = "00.00";
-int disp_screen = 0;
-int button_pin = 8;
-boolean button_value = 0;
+String current_day; // To store current day
+String current_date; // To store current date
+String current_time; // To store current time
+String current_temperature; // To store current temperature
+String your_birthday = "06.02"; // Set your birthday in format (DD/MM)
+String temp_date = "00.00"; // Temp variable
+int disp_screen=0;
+int counter = 0;
 
 void setup() {
-  pinMode(button_pin, INPUT);
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // OLED
   display.display(); //initialize display
   display.clearDisplay(); //clear display
@@ -59,14 +57,14 @@ void loop() {
     }
   }
 
-  button_value = digitalRead(button_pin);
-  if(button_value == 1) {
+  if(counter == 3) {
     disp_screen++;
-    if(disp_screen>2) {
-      disp_screen = 0;
-    }
+    counter = 0;
   }
-  
+
+  if(disp_screen>2) {
+    disp_screen = 0;
+  }
   display.clearDisplay();
   display.display();
   display.setTextColor(WHITE); // setting text color
@@ -99,7 +97,7 @@ void loop() {
       display.setTextSize(2); // setting text size
       display.setCursor(0,0); // setting position for OLED display
       display.println("Happy Bday");
-      display.println("Myself !!");
+      display.println("Vijitha !!");
       display.display();
     }
     else {
@@ -136,9 +134,9 @@ void loop() {
   //Show birthday or not
   if(count == 5) {
     Serial.print(" ");
-    Serial.println("Happy Bday Myself");
+    Serial.println("Happy Bday Vijitha");
   }
-  display.display(); 
-  
+  display.display();
+  counter++;
   delay (500);
 }
