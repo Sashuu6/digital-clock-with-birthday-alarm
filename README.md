@@ -48,3 +48,9 @@ Now, we will install Adafruit OLED library and run the clock code.
 1. Install Adafruit GFX library and Adafruit SSD1306 library from manage libraries.
 2. Edit the code present at program-code/clock-code/clock-code.ino to set the birthday date.
 3. Run the above code to start the clock.
+
+# Final Product
+
+![Box](docs/product.jpg)
+
+![Box internal](docs/product-internal.jpg)
