@@ -96,7 +96,7 @@ void loop() {
     display.setTextSize(2); // setting text size
     display.setCursor(0,0); // setting position for OLED display
     display.print(current_date);
-    display.setTextSize(1.5);
+    display.setTextSize(1.5); // Set text size
     display.setCursor(40,20);
     display.print(current_temperature);
     display.print(" C");
